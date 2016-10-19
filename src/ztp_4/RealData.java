@@ -11,12 +11,14 @@ public class RealData implements Data{
     
     private int[] tab = null;
     
-    RealData(int size) {
+    public RealData(int size) {
         tab = new int[size];
+        /*
         Random random = new Random();
         for(int i=0;i<size;i++){
             tab[i] = random.nextInt();
         }
+        */
     }
     @Override
     public int get(int idx) {

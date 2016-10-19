@@ -45,8 +45,10 @@ public class ZTP_4 {
         JMenuBar bar = new JMenuBar();
         JButton add = new JButton("Dodaj tablicę");
         JButton del = new JButton("Usuń tablicę");
+        JButton copy = new JButton("Skopiuj tablicę");
         bar.add(add);
         bar.add(del);
+        bar.add(copy);
 
         frame.setJMenuBar(bar);
 
@@ -90,6 +92,7 @@ public class ZTP_4 {
 
             }
         });
+        
     }
 
 }
