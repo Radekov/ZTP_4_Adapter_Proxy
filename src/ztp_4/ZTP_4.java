@@ -7,6 +7,7 @@ import javax.swing.event.ListSelectionListener;
 import ztp_4.adapters.Adapter;
 import ztp_4.adapters.AdapterExtend;
 import ztp_4.interfaces.Data;
+import ztp_4.proxy.ProxyLazy;
 
 /**
  *
@@ -61,7 +62,7 @@ public class ZTP_4 {
                     JOptionPane.INFORMATION_MESSAGE);
             try {
                 int size = Integer.parseInt(value);
-                dane.add(new RealData(size));
+                dane.add(new ProxyLazy(size));
                 adapter.setData((Data) dane.getElementAt(dane.getSize() - 1));
             } catch (Exception ex) {
                 System.out.println(ex + " PROBLEMO DODANO");
