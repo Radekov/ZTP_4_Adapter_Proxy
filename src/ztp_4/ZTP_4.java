@@ -7,6 +7,7 @@ import javax.swing.event.ListSelectionListener;
 import ztp_4.adapters.Adapter;
 import ztp_4.adapters.AdapterExtend;
 import ztp_4.interfaces.Data;
+import ztp_4.proxy.ProxyCopy;
 import ztp_4.proxy.ProxyLazy;
 
 /**
@@ -90,6 +91,12 @@ public class ZTP_4 {
             if (idx >= 0) {
                 adapter.setData((Data) dane.getElementAt(idx));
 
+            }
+        });
+        copy.addActionListener((ActionEvent e) -> {
+            int idx = list.getSelectedIndex();
+            if(idx >= 0){
+                dane.add(((Data)dane.getElementAt(idx)).copy());
             }
         });
         

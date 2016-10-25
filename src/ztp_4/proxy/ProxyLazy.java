@@ -4,8 +4,7 @@
  */
 package ztp_4.proxy;
 
-import javax.swing.AbstractListModel;
-import ztp_4.Baza;
+import java.util.LinkedList;
 import ztp_4.RealData;
 import ztp_4.interfaces.Data;
 
@@ -36,8 +35,9 @@ public class ProxyLazy implements Data {
 
     @Override
     public void set(int idx, int value) {
-        if(tablica == null)
+        if (tablica == null) {
             tablica = new RealData(rozmiar);
+        }
         tablica.set(idx, value);
     }
 
@@ -46,4 +46,20 @@ public class ProxyLazy implements Data {
         return rozmiar;
     }
 
+    @Override
+    public void cutCopies() {
+        if (tablica == null) {
+            return;
+        } else {
+            tablica.cutCopies();
+        }
+    }
+
+    @Override
+    public Data copy() {
+        if (tablica == null) {
+            tablica = new RealData(rozmiar);
+        }
+        return tablica.copy();
+    }
 }
